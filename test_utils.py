@@ -3,16 +3,26 @@ class Tester:
         self.total_tests = 0
         self.passed_tests = 0
 
-    def test(self, message, func, expected_result):
+    def test(self, message, func, expected_result=0, possible_results=[]):
         self.total_tests += 1
         try:
             actual_result = func()
         except Exception as e:
             actual_result = "\033[31mERROR\033[0m" + ' ' + str(e)
-        status = "\033[32mTEST PASSED\033[0m" if actual_result == expected_result else "\033[31mTEST FAILED\033[0m"
+           
+        if len(possible_results) > 0:
+            status = "\033[32mTEST PASSED\033[0m" if actual_result in possible_results else "\033[31mTEST FAILED\033[0m"
+            if actual_result in possible_results:
+                expected_result = actual_result
+        else:
+            status = "\033[32mTEST PASSED\033[0m" if actual_result == expected_result else "\033[31mTEST FAILED\033[0m"
+        
         print(f"{status} -> {message}")
         if actual_result != expected_result:
-            print(f"Expected: {expected_result}, but got: {actual_result}")
+            if len(possible_results) > 0:
+                print(f"Expected to be in: {possible_results}, but got: {actual_result}")
+            else:
+                print(f"Expected: {expected_result}, but got: {actual_result}")
         else:
             self.passed_tests += 1
 
