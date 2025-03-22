@@ -19,6 +19,6 @@ The functions included in this project are designed to help improve your program
 To use this project locally, clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/programmer-essentials-functions.git
-cd programmer-essentials-functions
+git clone https://github.com/nwfrank/algorithm_practice.git
+cd algorithm_practice
 ```
