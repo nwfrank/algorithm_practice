@@ -13,7 +13,7 @@ def dfs(graph, start):
         if node not in visited:
             visited.add(node)
             result.append(node)
-            stack.extend(reversed(graph[node]))  # Reverse to maintain order
+            stack.extend(graph[node])
 
     return result
 
@@ -32,7 +32,9 @@ def test_dfs():
         'E': ['B', 'F'],
         'F': ['C', 'E']
     }
-    tester.test('Single node with no prerequisites', lambda: dfs(graph, 'A'), possible_results=[['A', 'B', 'D', 'E', 'F', 'C'], ['A', 'B', 'E', 'F', 'C', 'D'], ['A', 'C', 'F', 'E', 'B', 'D']])
+    tester.test_multiple_possibilities('Graph with multiple possibilities starting at node A', lambda: dfs(graph, 'A'), [['A', 'B', 'D', 'E', 'F', 'C'], ['A', 'B', 'E', 'F', 'C', 'D'], ['A', 'C', 'F', 'E', 'B', 'D']])
+    tester.test_multiple_possibilities('Graph with multiple possibilities starting at node D', lambda: dfs(graph, 'D'), [['D', 'B', 'A', 'C', 'F', 'E'], ['D', 'B', 'E', 'F', 'C', 'A']])
+    tester.test('Single node', lambda: dfs({'S': []}, 'S'), ['S'])
 
     tester.print_pass_percentage()
 

@@ -60,21 +60,21 @@ def test_topological_sort():
         {"val": "B", "prerequisites": []},
         {"val": "C", "prerequisites": ["A", "B"]},
     ]
-    tester.test('Multiple valid sorts with independent letters', lambda: topological_sort(arr), possible_results=[['A', 'B', 'C'], ['B', 'A', 'C']])
+    tester.test_multiple_possibilities('Multiple valid sorts with independent letters', lambda: topological_sort(arr), [['A', 'B', 'C'], ['B', 'A', 'C']])
 
     arr = [
         {"val": "Cake", "prerequisites": ["Eggs"]},
         {"val": "Eggs", "prerequisites": []},
         {"val": "Omelet", "prerequisites": ["Eggs"]},
     ]
-    tester.test('All ingredients depend on one base', lambda: topological_sort(arr), possible_results=[['Eggs', 'Cake', 'Omelet'], ['Eggs', 'Omelet', 'Cake']])
+    tester.test_multiple_possibilities('All ingredients depend on one base', lambda: topological_sort(arr), [['Eggs', 'Cake', 'Omelet'], ['Eggs', 'Omelet', 'Cake']])
 
     arr = [
         {"val": "X", "prerequisites": []},
         {"val": "Y", "prerequisites": []},
         {"val": "Z", "prerequisites": []},
     ]
-    tester.test('No prerequisites, all letters independent', lambda: topological_sort(arr), possible_results=[list(p) for p in permutations(['X', 'Y', 'Z'])])
+    tester.test_multiple_possibilities('No prerequisites, all letters independent', lambda: topological_sort(arr), [list(p) for p in permutations(['X', 'Y', 'Z'])])
 
     arr = [
         {"val": "Sauce", "prerequisites": ["Tomatoes"]},
@@ -82,7 +82,7 @@ def test_topological_sort():
         {"val": "Water", "prerequisites": []},
         {"val": "Salt", "prerequisites": ["Tomatoes"]},
     ]
-    tester.test('Complex ingredient dependency structure', lambda: topological_sort(arr), possible_results=[['Water', 'Tomatoes', 'Sauce', 'Salt'], ['Water', 'Tomatoes', 'Salt', 'Sauce']])
+    tester.test_multiple_possibilities('Complex ingredient dependency structure', lambda: topological_sort(arr), [['Water', 'Tomatoes', 'Sauce', 'Salt'], ['Water', 'Tomatoes', 'Salt', 'Sauce']])
 
     arr = [
         {"val": "Apple", "prerequisites": []},
@@ -92,7 +92,7 @@ def test_topological_sort():
         {"val": "Eggplant", "prerequisites": []},
         {"val": "Fig", "prerequisites": []},
     ]
-    tester.test('Large graph with independent ingredients', lambda: topological_sort(arr), possible_results=[list(p) for p in permutations(['Apple', 'Banana', 'Carrot', 'Dates', 'Eggplant', 'Fig'])])
+    tester.test_multiple_possibilities('Large graph with independent ingredients', lambda: topological_sort(arr), [list(p) for p in permutations(['Apple', 'Banana', 'Carrot', 'Dates', 'Eggplant', 'Fig'])])
 
     arr = [
         {"val": "Sugar", "prerequisites": ["Sugar"]},
