@@ -14,7 +14,7 @@ The goal is for me to practice these functions and share them!
 The functions included in this project are designed to help improve your programming skills. Some examples include:
 
 - **Search algorithms**: [Binary Search](./binary_search/binary_search.py)
-- **Sorting algorithms**: [Topological Search](./topological_sort\topological_sort.py)
+- **Sorting algorithms**: [Topological Sort](./topological_sort\topological_sort.py)
 
 ## Testing
 
