@@ -35,7 +35,7 @@ def topological_sort(arr):
 
 # ============== TESTS ==============
 
-def test_binary_search():
+def test_topological_sort():
     tester = Tester()
     
     arr = [
@@ -101,4 +101,4 @@ def test_binary_search():
 
     tester.print_pass_percentage()
 
-test_binary_search()
+test_topological_sort()
