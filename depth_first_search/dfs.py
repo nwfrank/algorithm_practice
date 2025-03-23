@@ -42,8 +42,8 @@ def test_dfs():
         'T': ['!'],
         '!': []
     }
-    tester.test('Undirected graph with only one possible path', lambda: dfs(linear_directed_graph, 'S'), ['S', 'M', 'A', 'R', 'T', '!'])
-    tester.test('Undirected graph with only one possible path and unreachable verticies', lambda: dfs(linear_directed_graph, 'R'), ['R', 'T', '!'])
+    tester.test('Directed graph with only one possible path', lambda: dfs(linear_directed_graph, 'S'), ['S', 'M', 'A', 'R', 'T', '!'])
+    tester.test('Directed graph with only one possible path and unreachable verticies', lambda: dfs(linear_directed_graph, 'R'), ['R', 'T', '!'])
     directed_graph = {
         'S': ['B', 'D'],
         'A': ['S'],
@@ -51,8 +51,8 @@ def test_dfs():
         'C': ['S'],
         'D': ['A']
     }
-    tester.test_multiple_possibilities('Undirected graph with multiple possibilities starting from node S', lambda: dfs(directed_graph, 'S'), [['S', 'B', 'C', 'D', 'A'], ['S', 'D', 'A', 'B', 'C']])
-    tester.test('Undirected graph with multiple possibilities starting from node D', lambda: dfs(directed_graph, 'D'), ['D', 'A', 'S', 'B', 'C'])
+    tester.test_multiple_possibilities('Directed graph with multiple possibilities starting from node S', lambda: dfs(directed_graph, 'S'), [['S', 'B', 'C', 'D', 'A'], ['S', 'D', 'A', 'B', 'C']])
+    tester.test('Directed graph with multiple possibilities starting from node D', lambda: dfs(directed_graph, 'D'), ['D', 'A', 'S', 'B', 'C'])
 
     tester.print_pass_percentage()
 
