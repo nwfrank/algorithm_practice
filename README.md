@@ -15,6 +15,7 @@ The functions included in this project are designed to help improve your program
 
 - **Search algorithms**: [Binary Search](./binary_search/binary_search.py)
 - **Sorting algorithms**: [Topological Sort](./topological_sort/topological_sort.py)
+- **Graph algorithms**: [Depth First Search](./depth_first_search/dfs.py)
 
 ## Testing
 
