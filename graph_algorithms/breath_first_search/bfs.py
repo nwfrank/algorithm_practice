@@ -1,6 +1,6 @@
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 from test_utils import Tester
 
 def bfs(graph, start):
@@ -16,6 +16,7 @@ def bfs(graph, start):
                 queue.append(nei)
     return result
     
+
 
 # ============== TESTS ==============
 
