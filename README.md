@@ -14,7 +14,7 @@ The goal is for me to practice these functions and share them!
 The functions included in this project are designed to help improve your programming skills. Some examples include:
 
 - **Search algorithms**: [Binary Search](./binary_search/binary_search.py)
-- **Sorting algorithms**: [Bubble Sort](./sorting_algorithms/bubble_sort.py), [Topological Sort](./topological_sort/topological_sort.py), [Merge Sort](./sorting_algorithms/merge_sort.py)
+- **Sorting algorithms**: [Bubble Sort](./sorting_algorithms/bubble_sort.py), [Topological Sort](./topological_sort/topological_sort.py), [Merge Sort](./sorting_algorithms/merge_sort.py), [Insertion Sort](./sorting_algorithms/insertion_sort.py)
 - **Graph algorithms**: [Depth First Search](./graph_algorithms/depth_first_search/dfs.py), [Breath First Search](./graph_algorithms/breath_first_search/bfs.py), [Dijkstra's Shortest Path](./graph_algorithms/dijkstras_shortest_path/dijkstra.py)
 
 ## Testing
